@@ -23,39 +23,44 @@ const Login = () => {
     }
   };
 
+  
+
   return (
-    <div className="p-4 box" style={{ background: "#f8f9fa", borderRadius: "10px", maxWidth: "400px", margin: "auto" }}>
-      <h2 className="mb-3">Login</h2>
+    <>
+      <div className="p-4 box">
+        <h2 className="mb-3">Login</h2>
 
-      {error && <Alert variant="danger">{error}</Alert>}
+        {error && <Alert variant="danger">{error}</Alert>}
 
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            type="email"
-            placeholder="Email address"
-            onChange={(e) => setEmail(e.target.value)}
-            className="rounded-pill"
-          />
-        </Form.Group>
+        <Form onSubmit={handleSubmit}>
+          
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="email"
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            className="rounded-pill"
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
 
-        <div className="d-grid gap-2">
-          <Button variant="primary" type="Submit" className="rounded-pill btn-block">
-            Log In
-          </Button>
-        </div>
-      </Form>
-      <hr />
-    </div>
+          <div className="d-grid gap-2">
+            <Button variant="primary" type="Submit">
+              Log In
+            </Button>
+          </div>
+        </Form>
+        <hr />
+        
+      </div>
+     
+    </>
   );
 };
 
